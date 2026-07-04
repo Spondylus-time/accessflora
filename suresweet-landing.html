@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SureSweet — Oysters You Can Set Your Watch To</title>
+<meta name="description" content="SureSweet oysters are conditioned in purified water on a curated algae diet for controlled salinity, sweetness, and full flavor — every batch, year-round. Reserve your spot for October samples.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --brine-900:#0a1f24;
+    --brine-800:#12303686;
+    --brine-800-solid:#123036;
+    --brine-700:#1b3d43;
+    --shell-100:#f4efe3;
+    --shell-60:rgba(244,239,227,0.6);
+    --shell-35:rgba(244,239,227,0.35);
+    --shell-15:rgba(244,239,227,0.12);
+    --salinity:#3bb3ac;
+    --salinity-dim:rgba(59,179,172,0.25);
+    --sweetness:#e3a94b;
+    --sweetness-dim:rgba(227,169,75,0.25);
+    --radius:14px;
+    --max:1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--brine-900);
+    color:var(--shell-100);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0 0 0.4em 0;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  section{padding:96px 0;}
+  @media (max-width:640px){ section{padding:64px 0;} }
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,31,36,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--shell-15);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--max); margin:0 auto;
+    flex-wrap:wrap; gap:12px;
+  }
+  .brand{
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .brand-mark{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.3rem;
+  }
+  .brand-sub{
+    font-size:0.72rem;
+    color:var(--shell-60);
+  }
+  .nav-links{
+    display:flex; gap:28px; list-style:none; margin:0; padding:0;
+    font-size:0.92rem;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--shell-60);
+    transition:color 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--shell-100); }
+  .nav-cta{
+    background:var(--salinity);
+    color:var(--brine-900);
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.9rem;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .nav-cta:hover{ background:#4fc4bd; transform:translateY(-1px); }
+  @media (max-width:760px){ .nav-links{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:110px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:0.75rem;
+    color:var(--salinity);
+    background:var(--salinity-dim);
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.2rem);
+    max-width:15ch;
+    color:var(--shell-100);
+  }
+  .hero p.lede{
+    font-size:clamp(1.05rem, 1.6vw, 1.25rem);
+    color:var(--shell-60);
+    max-width:56ch;
+    margin:0 0 34px 0;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn-primary{
+    background:var(--salinity);
+    color:var(--brine-900);
+    border:none;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.98rem;
+    text-decoration:none;
+    display:inline-block;
+    cursor:pointer;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary:hover{ background:#4fc4bd; transform:translateY(-1px); }
+  .btn-ghost{
+    border:1px solid var(--shell-35);
+    color:var(--shell-100);
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:500;
+    font-size:0.98rem;
+    text-decoration:none;
+    display:inline-block;
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-ghost:hover{ border-color:var(--shell-100); background:var(--shell-15); }
+
+  /* salinity gauge ambient graphic */
+  .gauge{
+    margin-top:64px;
+    max-width:640px;
+  }
+  .gauge svg{ width:100%; height:auto; display:block; }
+  .gauge-caption{
+    display:flex; justify-content:space-between;
+    font-size:0.7rem; color:var(--shell-35);
+    margin-top:6px;
+  }
+
+  /* ---------- VALUE GRID ---------- */
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head .mono{ color:var(--sweetness); font-size:0.75rem; }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.3rem); }
+  .section-head p{ color:var(--shell-60); }
+
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--shell-15);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  @media (max-width:700px){ .value-grid{ grid-template-columns:1fr; } }
+  .value-card{
+    background:var(--brine-800-solid);
+    padding:34px 32px;
+  }
+  .value-card .mono{ font-size:0.7rem; color:var(--salinity); }
+  .value-card h3{ font-size:1.25rem; margin-top:10px; color:var(--shell-100); }
+  .value-card p{ color:var(--shell-60); margin:10px 0 0 0; font-size:0.96rem; }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+  }
+  @media (max-width:1000px){ .steps{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .steps{ grid-template-columns:1fr; } }
+  .step{
+    border-top:2px solid var(--salinity);
+    padding-top:18px;
+  }
+  .step .mono{ font-size:0.7rem; color:var(--shell-35); }
+  .step h3{ font-size:1.1rem; margin-top:8px; }
+  .step p{ color:var(--shell-60); font-size:0.92rem; }
+
+  /* ---------- PROFILE BUILDER (signature element) ---------- */
+  .profile-section{
+    background:var(--brine-800-solid);
+    border-radius:24px;
+    padding:56px;
+  }
+  @media (max-width:640px){ .profile-section{ padding:32px 22px; border-radius:16px; } }
+
+  .profile-layout{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width:860px){ .profile-layout{ grid-template-columns:1fr; } }
+
+  .reference-block{ margin-bottom:36px; }
+  .profile-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+  }
+  .profile-chip{
+    background:var(--brine-900);
+    border:1px solid var(--shell-15);
+    color:var(--shell-100);
+    border-radius:10px;
+    padding:10px 14px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    transition:border-color 0.15s ease, transform 0.15s ease;
+  }
+  .profile-chip:hover, .profile-chip:focus-visible{
+    border-color:var(--salinity);
+    transform:translateY(-1px);
+  }
+  .profile-chip.active{
+    border-color:var(--sweetness);
+    background:var(--sweetness-dim);
+  }
+  .profile-chip .chip-name{ font-size:0.85rem; font-weight:600; }
+  .profile-chip .chip-tag{
+    font-size:0.72rem;
+    color:var(--shell-60);
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:none;
+    letter-spacing:0;
+  }
+
+  .slider-block{ margin-bottom:34px; }
+  .slider-label{
+    display:flex; justify-content:space-between; align-items:baseline;
+    margin-bottom:10px;
+  }
+  .slider-label .name{ font-weight:600; font-size:0.98rem; }
+  .slider-label .readout{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+  }
+  .slider-label .readout.salinity{ color:var(--salinity); }
+  .slider-label .readout.sweetness{ color:var(--sweetness); }
+
+  input[type=range]{
+    -webkit-appearance:none;
+    width:100%;
+    height:4px;
+    border-radius:999px;
+    background:var(--shell-15);
+    outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:20px; height:20px;
+    border-radius:50%;
+    background:var(--shell-100);
+    border:3px solid var(--brine-900);
+    cursor:pointer;
+  }
+  input#salinity::-webkit-slider-thumb{ border-color:var(--salinity); }
+  input#sweetness::-webkit-slider-thumb{ border-color:var(--sweetness); }
+  input[type=range]::-moz-range-thumb{
+    width:14px; height:14px; border-radius:50%;
+    background:var(--shell-100); border:3px solid var(--salinity); cursor:pointer;
+  }
+  .scale-ticks{
+    display:flex; justify-content:space-between;
+    font-size:0.68rem; color:var(--shell-35); margin-top:6px;
+  }
+
+  .flavor-notes label{
+    display:block; font-weight:600; font-size:0.98rem; margin-bottom:10px;
+  }
+  textarea, input[type=email], input[type=text]{
+    width:100%;
+    background:var(--brine-900);
+    border:1px solid var(--shell-15);
+    color:var(--shell-100);
+    border-radius:10px;
+    padding:13px 14px;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.95rem;
+  }
+  textarea:focus, input:focus{
+    outline:2px solid var(--salinity);
+    outline-offset:1px;
+  }
+  textarea{ resize:vertical; min-height:80px; }
+
+  /* live plot */
+  .plot-card{
+    background:var(--brine-900);
+    border:1px solid var(--shell-15);
+    border-radius:16px;
+    padding:26px;
+  }
+  .plot-title{ font-size:0.72rem; color:var(--shell-35); margin-bottom:18px; }
+  .plot-area{
+    position:relative;
+    aspect-ratio:1/1;
+    width:100%;
+    border-left:1px solid var(--shell-15);
+    border-bottom:1px solid var(--shell-15);
+    background:
+      linear-gradient(to top, var(--shell-15) 1px, transparent 1px) 0 0/100% 25%,
+      linear-gradient(to right, var(--shell-15) 1px, transparent 1px) 0 0/25% 100%;
+  }
+  .plot-dot{
+    position:absolute;
+    width:16px; height:16px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #fff, var(--salinity) 70%);
+    box-shadow:0 0 0 6px var(--salinity-dim);
+    transform:translate(-50%, 50%);
+    transition:left 0.12s ease, bottom 0.12s ease;
+  }
+  .plot-axis-label{
+    position:absolute;
+    font-size:0.65rem;
+    color:var(--shell-35);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .plot-axis-label.x{ bottom:-24px; right:0; }
+  .plot-axis-label.y{ top:-4px; left:-6px; writing-mode:vertical-rl; transform:rotate(180deg); }
+
+  .readout-line{
+    margin-top:20px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.95rem;
+    color:var(--shell-100);
+    background:var(--brine-800-solid);
+    border-radius:10px;
+    padding:14px 16px;
+  }
+  .readout-line span{ color:var(--shell-35); }
+
+  .form-row{ margin-bottom:20px; }
+  .form-note{
+    font-size:0.78rem;
+    color:var(--shell-35);
+    margin-top:10px;
+  }
+  .form-status{
+    margin-top:16px;
+    font-size:0.9rem;
+    padding:12px 14px;
+    border-radius:10px;
+    display:none;
+  }
+  .form-status.show{ display:block; }
+  .form-status.warn{ background:rgba(227,169,75,0.15); color:var(--sweetness); }
+  .form-status.ok{ background:rgba(59,179,172,0.15); color:var(--salinity); }
+
+  /* ---------- STATUS / TIMELINE ---------- */
+  .timeline{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    margin-top:48px;
+    gap:12px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    top:9px; left:0; right:0;
+    height:2px;
+    background:var(--shell-15);
+  }
+  .tl-stage{
+    position:relative;
+    flex:1;
+    text-align:left;
+  }
+  .tl-dot{
+    width:20px; height:20px;
+    border-radius:50%;
+    background:var(--brine-900);
+    border:2px solid var(--shell-35);
+    margin-bottom:16px;
+  }
+  .tl-stage.active .tl-dot{
+    border-color:var(--salinity);
+    background:var(--salinity);
+    box-shadow:0 0 0 5px var(--salinity-dim);
+  }
+  .tl-stage.done .tl-dot{ border-color:var(--salinity); background:var(--brine-900); }
+  .tl-stage h4{
+    font-size:0.92rem; margin:0 0 6px 0; color:var(--shell-100);
+  }
+  .tl-stage p{ font-size:0.82rem; color:var(--shell-60); margin:0; padding-right:10px; }
+  @media (max-width:760px){
+    .timeline{ flex-direction:column; gap:28px; }
+    .timeline::before{ display:none; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media (max-width:760px){ .about-grid{ grid-template-columns:1fr; } }
+  .quote-block{
+    border-left:2px solid var(--sweetness);
+    padding-left:22px;
+    font-family:'Fraunces', serif;
+    font-size:1.3rem;
+    color:var(--shell-100);
+    font-weight:500;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border-bottom:1px solid var(--shell-15);
+    padding:22px 0;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:1.02rem;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--salinity);
+    font-size:1.2rem;
+  }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item p{ color:var(--shell-60); margin:14px 0 0 0; max-width:65ch; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--shell-15);
+    padding:48px 0 36px;
+  }
+  .footer-grid{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;
+    margin-bottom:28px;
+  }
+  .footer-grid .brand-mark{ font-size:1.1rem; }
+  .footer-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:0.88rem; }
+  .footer-links a{ text-decoration:none; color:var(--shell-60); }
+  .footer-links a:hover{ color:var(--shell-100); }
+  .legal{
+    font-size:0.78rem;
+    color:var(--shell-35);
+    line-height:1.7;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <div class="brand">
+      <span class="brand-mark">SureSweet</span>
+      <span class="brand-sub">by AccessFlora</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#what">The Oyster</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#profile">Build Your Profile</a></li>
+      <li><a href="#status">Progress</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="nav-cta" href="#profile">Reserve Access</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow mono">For Chefs &amp; Buyers</span>
+      <h1>No two oysters are alike.<br>Except ours.</h1>
+      <p class="lede">SureSweet oysters are conditioned in purified, salinity-controlled water on a curated microalgae diet — so every batch you order tastes like the last one. Sediment-free, lab-tested, available year-round.</p>
+      <div class="hero-actions">
+        <a href="#profile" class="btn-primary">Reserve Your Spot</a>
+        <a href="#how" class="btn-ghost">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT / VALUE PROPS -->
+  <section id="what">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">The Oyster</span>
+        <h2>Certainty, on the half shell.</h2>
+        <p>Wild and farmed oysters vary by tide, season, and source. SureSweet oysters are conditioned after harvest so you get the same profile in every order, whenever you order it.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card">
+          <span class="mono">Salinity</span>
+          <h3>Dialed in, not left to chance</h3>
+          <p>Each batch is conditioned to a target salinity, from a clean 10 ppt to a bold 35 ppt, instead of whatever the tide delivered that week.</p>
+        </div>
+        <div class="value-card">
+          <span class="mono">Sweetness</span>
+          <h3>Full flavor, every batch</h3>
+          <p>A curated microalgae diet fattens the oyster for a rounder, sweeter finish, tuned from standard to sweetest.</p>
+        </div>
+        <div class="value-card">
+          <span class="mono">Clarity</span>
+          <h3>Sediment-free</h3>
+          <p>Purified water means no grit and no mud, so oysters shuck perfectly clean and eat smooth, with none of the grittiness that comes from sediment in the shell.</p>
+        </div>
+        <div class="value-card">
+          <span class="mono">Safety</span>
+          <h3>Every batch tested</h3>
+          <p>Every batch is lab-tested for safety before it ships. Certainty isn't a promise on a menu, it's a process behind it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">How It Works</span>
+        <h2>From the farm to a known flavor.</h2>
+        <p>We don't grow oysters from seed. We take good oysters and make them predictable.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="mono">01 · Source</span>
+          <h3>Start with quality</h3>
+          <p>We source oysters from trusted external farms as our raw material.</p>
+        </div>
+        <div class="step">
+          <span class="mono">02 · Condition</span>
+          <h3>Purified water, curated diet</h3>
+          <p>Oysters spend time in our recirculating aquaculture system on a controlled microalgae diet.</p>
+        </div>
+        <div class="step">
+          <span class="mono">03 · Dial In</span>
+          <h3>Tune the profile</h3>
+          <p>Salinity and sweetness are set to a target, fattening the oyster for consistent, full flavor.</p>
+        </div>
+        <div class="step">
+          <span class="mono">04 · Hold Fresh</span>
+          <h3>Wait on us, not the calendar</h3>
+          <p>Finished oysters stay held in water until the day of your delivery, so every order arrives just-harvested fresh, not days off the boat.</p>
+        </div>
+        <div class="step">
+          <span class="mono">05 · Test &amp; Ship</span>
+          <h3>Verify, then send</h3>
+          <p>Every batch is tested for safety before it reaches your kitchen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE BUILDER + SIGNUP -->
+  <section id="profile">
+    <div class="wrap">
+      <div class="profile-section">
+        <div class="section-head" style="margin-bottom:40px;">
+          <span class="mono">Build Your Profile</span>
+          <h2>Tell us the oyster you want.</h2>
+          <p>Move the sliders to the profile you'd want on your menu. We'll save it with your email and reach out when samples are ready.</p>
+        </div>
+
+        <form id="signup-form" class="profile-layout"
+              action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+              method="POST">
+          <!--
+            SETUP REQUIRED:
+            A static HTML file can't store form submissions on its own — it needs a backend to
+            collect and save the email list. Replace the action URL above with an endpoint from
+            an email-collection service, for example:
+              - Formspree (formspree.io) — quickest to set up, works with a plain HTML form
+              - Google Forms (embed or link out instead of this form)
+              - Mailchimp / ConvertKit signup form action URL
+              - Airtable form, or a simple serverless function you control
+            Until this is connected, the script below will warn you instead of pretending to save data.
+          -->
+
+          <div>
+            <div class="reference-block">
+              <span class="mono" style="font-size:0.7rem; color:var(--shell-35);">Or Start From A Classic</span>
+              <div class="profile-chips" id="profile-chips">
+                <button type="button" class="profile-chip" data-salinity="30" data-sweetness="20">
+                  <span class="chip-name">Wellfleet, USA</span>
+                  <span class="chip-tag">Briny &amp; mineral</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="24" data-sweetness="35">
+                  <span class="chip-name">Blue Point, USA</span>
+                  <span class="chip-tag">Classic &amp; balanced</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="14" data-sweetness="55">
+                  <span class="chip-name">Chesapeake, USA</span>
+                  <span class="chip-tag">Low brine &amp; sweet</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="16" data-sweetness="90">
+                  <span class="chip-name">Pacific Northwest, USA</span>
+                  <span class="chip-tag">Buttery &amp; sweetest</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="22" data-sweetness="60">
+                  <span class="chip-name">Marennes-Oléron, France</span>
+                  <span class="chip-tag">Nutty &amp; subtly sweet</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="33" data-sweetness="15">
+                  <span class="chip-name">Galway Bay, Ireland</span>
+                  <span class="chip-tag">Bold &amp; briny</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="27" data-sweetness="45">
+                  <span class="chip-name">Sydney, Australia</span>
+                  <span class="chip-tag">Creamy &amp; mineral</span>
+                </button>
+                <button type="button" class="profile-chip" data-salinity="20" data-sweetness="50">
+                  <span class="chip-name">Chiloé, Chile</span>
+                  <span class="chip-tag">Clean &amp; mild sweet</span>
+                </button>
+              </div>
+              <p class="form-note" style="margin-top:10px;">Illustrative reference points based on classic regional character, not exact measurements. Tap one to set your sliders, then adjust from there.</p>
+            </div>
+
+            <div class="slider-block">
+              <div class="slider-label">
+                <span class="name">Salinity</span>
+                <span class="readout salinity mono" id="salinity-readout">22 ppt · Balanced</span>
+              </div>
+              <input type="range" id="salinity" name="salinity_ppt" min="10" max="35" value="22" step="1">
+              <div class="scale-ticks mono"><span>Fresh · 10</span><span>Most Salty · 35</span></div>
+            </div>
+
+            <div class="slider-block">
+              <div class="slider-label">
+                <span class="name">Sweetness</span>
+                <span class="readout sweetness mono" id="sweetness-readout">Sweet</span>
+              </div>
+              <input type="range" id="sweetness" name="sweetness_level" min="0" max="100" value="55" step="1">
+              <div class="scale-ticks mono"><span>Standard</span><span>Sweetest</span></div>
+            </div>
+
+            <div class="slider-block">
+              <div class="slider-label">
+                <span class="name">Size</span>
+                <span class="readout salinity mono" id="size-readout">3" · Medium</span>
+              </div>
+              <input type="range" id="size" name="size_in" min="2.5" max="3.5" value="3" step="0.1">
+              <div class="scale-ticks mono"><span>Petite · 2.5"</span><span>Large · 3.5"</span></div>
+            </div>
+
+            <div class="form-row flavor-notes">
+              <label for="notes">Specific flavor notes you're after (optional)</label>
+              <textarea id="notes" name="flavor_notes" placeholder="e.g. buttery finish, faint cucumber note, minimal brine on the nose"></textarea>
+            </div>
+
+            <div class="form-row">
+              <label for="email" style="display:block; font-weight:600; font-size:0.98rem; margin-bottom:10px;">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@restaurant.com" required>
+            </div>
+
+            <button type="submit" class="btn-primary" style="border:none; width:100%; cursor:pointer;">Join the List</button>
+            <p class="form-note">We'll only use this to notify you when samples are ready and to share progress updates. No spam, unsubscribe anytime.</p>
+            <div class="form-status" id="form-status"></div>
+          </div>
+
+          <div class="plot-card">
+            <div class="plot-title mono">Your Profile, Plotted</div>
+            <div class="plot-area" id="plot-area">
+              <div class="plot-dot" id="plot-dot"></div>
+              <span class="plot-axis-label x mono">Salinity →</span>
+              <span class="plot-axis-label y mono">Sweetness →</span>
+            </div>
+            <div class="readout-line">
+              <span>Target profile:</span> <span id="combined-readout">22 ppt Balanced · Sweet</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS / TIMELINE -->
+  <section id="status">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">Where We Are Now</span>
+        <h2>Not on the menu yet. Almost there.</h2>
+        <p>SureSweet oysters aren't available for commercial sale today. Here's where things stand, and what's left before your first sample.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-stage done">
+          <div class="tl-dot"></div>
+          <h4>Conditioning Trials</h4>
+          <p>Salinity and diet protocols developed and validated in our RAS.</p>
+        </div>
+        <div class="tl-stage active">
+          <div class="tl-dot"></div>
+          <h4>Safety Testing</h4>
+          <p>Batch-level lab testing underway to confirm every profile ships safe.</p>
+        </div>
+        <div class="tl-stage">
+          <div class="tl-dot"></div>
+          <h4>Regulatory Sign-Off</h4>
+          <p>Finalizing shellfish safety certification for commercial sale.</p>
+        </div>
+        <div class="tl-stage">
+          <div class="tl-dot"></div>
+          <h4>October Samples</h4>
+          <p>First samples go out to chefs and buyers on the list.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <span class="mono" style="color:var(--sweetness); font-size:0.75rem;">Our Mission</span>
+          <h2 style="margin-top:14px;">Take the guesswork out of the oyster program.</h2>
+          <p style="color:var(--shell-60);">AccessFlora conditions oysters after harvest, so restaurants can build a menu around a flavor they can count on, in every season, not just the ones the water cooperates with.</p>
+        </div>
+        <div class="quote-block">
+          "The best oyster program isn't the one with the best oyster once. It's the one with the same great oyster, every time."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="mono">FAQ</span>
+        <h2>Good questions.</h2>
+      </div>
+
+      <details class="faq-item">
+        <summary>Can I order SureSweet oysters right now?</summary>
+        <p>Not yet. We're finishing safety testing and regulatory approval, with samples going out to our list this October. Reserve your spot above to be first in line.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who is SureSweet for?</summary>
+        <p>Chefs, restaurant buyers, and distributors who want a consistent oyster profile they can build a menu around year-round.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I really choose an exact salinity and sweetness?</summary>
+        <p>You can tell us your target profile and flavor notes when you join the list. As we bring on early customers, we'll work with you on how closely we can match it for your first orders.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where do the oysters come from?</summary>
+        <p>We source oysters from trusted external farms, then condition them ourselves in purified, salinity-controlled water on a curated microalgae diet.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get in touch about wholesale or partnerships?</summary>
+        <p>Email us at hello@accessflora.com — we'd love to hear from you.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="brand">
+        <span class="brand-mark">SureSweet</span>
+      </div>
+      <div class="footer-links">
+        <a href="#what">The Oyster</a>
+        <a href="#how">How It Works</a>
+        <a href="#profile">Reserve Access</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:hello@accessflora.com">Contact</a>
+      </div>
+    </div>
+    <p class="legal">
+      SureSweet is a product of AccessFlora LLC. SureSweet oysters are currently in development and are not yet available for commercial sale.<br>
+      © 2026 AccessFlora LLC. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+  const salinity = document.getElementById('salinity');
+  const sweetness = document.getElementById('sweetness');
+  const size = document.getElementById('size');
+  const salinityReadout = document.getElementById('salinity-readout');
+  const sweetnessReadout = document.getElementById('sweetness-readout');
+  const sizeReadout = document.getElementById('size-readout');
+  const combinedReadout = document.getElementById('combined-readout');
+  const dot = document.getElementById('plot-dot');
+
+  function salinityLabel(v){
+    if(v <= 14) return 'Fresh';
+    if(v <= 19) return 'Light';
+    if(v <= 25) return 'Balanced';
+    if(v <= 30) return 'Briny';
+    return 'Most Salty';
+  }
+  function sweetnessLabel(v){
+    if(v <= 10) return 'Standard';
+    if(v <= 40) return 'Subtly Sweet';
+    if(v <= 70) return 'Sweet';
+    return 'Sweetest';
+  }
+  function sizeLabel(v){
+    if(v <= 2.7) return 'Petite';
+    if(v <= 3.0) return 'Small';
+    if(v <= 3.3) return 'Medium';
+    return 'Large';
+  }
+
+  function update(){
+    const sVal = Number(salinity.value);
+    const swVal = Number(sweetness.value);
+    const szVal = Number(size.value);
+
+    salinityReadout.textContent = sVal + ' ppt · ' + salinityLabel(sVal);
+    sweetnessReadout.textContent = sweetnessLabel(swVal);
+    sizeReadout.textContent = szVal.toFixed(1) + '" · ' + sizeLabel(szVal);
+    combinedReadout.textContent = sVal + ' ppt ' + salinityLabel(sVal) + ' · ' + sweetnessLabel(swVal) + ' · ' + szVal.toFixed(1) + '" ' + sizeLabel(szVal);
+
+    const xPct = ((sVal - 10) / (35 - 10)) * 100;
+    const yPct = (swVal / 100) * 100;
+    dot.style.left = xPct + '%';
+    dot.style.bottom = yPct + '%';
+  }
+
+  salinity.addEventListener('input', update);
+  sweetness.addEventListener('input', update);
+  size.addEventListener('input', update);
+  update();
+
+  const chips = document.querySelectorAll('.profile-chip');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      salinity.value = chip.dataset.salinity;
+      sweetness.value = chip.dataset.sweetness;
+      update();
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+
+  // Guard against submitting to the unconfigured placeholder endpoint.
+  const form = document.getElementById('signup-form');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', function(e){
+    if(form.action.includes('REPLACE_WITH_YOUR_FORM_ID')){
+      e.preventDefault();
+      status.textContent = 'This form isn\'t connected to an email service yet — see the setup comment in the HTML near the form to finish wiring it up.';
+      status.className = 'form-status show warn';
+    }
+  });
+
+  // Gentle reveal on scroll
+  const revealables = document.querySelectorAll('section > .wrap');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.1});
+    revealables.forEach(el=>{
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      io.observe(el);
+    });
+  }
+</script>
+
+</body>
+</html>
