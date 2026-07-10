@@ -486,6 +486,32 @@
     font-weight:500;
   }
 
+  /* ---------- FOUNDER / ABOUT ---------- */
+  .about-section{
+    background:var(--brine-800-solid);
+    border-top:1px solid var(--shell-15);
+    border-bottom:1px solid var(--shell-15);
+  }
+  .about-media{
+    position:relative;
+    max-width:440px;
+    margin:0 auto;
+  }
+  .about-photo-main{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 24px 48px rgba(0,0,0,0.35);
+    display:block;
+  }
+  @media (max-width:760px){
+    .about-media{ max-width:340px; margin-bottom:56px; }
+  }
+  .about-text .mono{ color:var(--sweetness); font-size:0.75rem; }
+  .about-text h2{ margin-top:14px; font-size:clamp(1.7rem, 3vw, 2.3rem); }
+  .about-text p{ color:var(--shell-60); margin-top:18px; }
+
   /* ---------- FAQ ---------- */
   .faq-item{
     border-bottom:1px solid var(--shell-15);
@@ -797,8 +823,25 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
+  <!-- FOUNDER / ABOUT -->
+  <section id="about" class="about-section">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-media">
+          <img class="about-photo-main" src="images/keegan-photo2.jpg" alt="Keegan, founder of AccessFlora">
+        </div>
+        <div class="about-text">
+          <span class="mono">Meet The Founder</span>
+          <h2>From the lab to the water, and back to the table.</h2>
+          <p>Hi, I'm Keegan. While researching microalgae cultivation as a graduate student at the University of Connecticut, I set out to revolutionize shellfish farming. I traveled from Australia to Ecuador to learn the aquaculture industry from the inside out. Bringing that global expertise back home, I launched Reef to Table, a mobile oyster trailer delivering premium raw bars and curated seafood experiences across Connecticut.</p>
+          <p>But along the way, I saw the industry's deep vulnerabilities, including harsh weather disrupting supply, cold storage draining oysters of their natural flavor, and safety risks that left consumers hesitant. So, I created AccessFlora. By using a proprietary natural feed, we have made oysters that are inherently safer to eat, more nutrient-dense (packed with Omega-3s), and completely customizable in their flavor profile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
     <div class="wrap">
       <div class="about-content">
         <span class="mono" style="color:var(--sweetness); font-size:0.75rem;">Our Mission</span>
