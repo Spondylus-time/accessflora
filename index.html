@@ -490,7 +490,6 @@
   .about-section{
     background:var(--brine-800-solid);
     border-top:1px solid var(--shell-15);
-    border-bottom:1px solid var(--shell-15);
   }
   .about-media{
     position:relative;
@@ -511,6 +510,26 @@
   .about-text .mono{ color:var(--sweetness); font-size:0.75rem; }
   .about-text h2{ margin-top:14px; font-size:clamp(1.7rem, 3vw, 2.3rem); }
   .about-text p{ color:var(--shell-60); margin-top:18px; }
+
+  /* ---------- FUNDING / PARTNERS ---------- */
+  .af-funding{ background:var(--brine-800-solid); border-bottom:1px solid var(--shell-15); }
+  .af-funding__inner{
+    max-width:1360px; margin:0 auto; padding:64px 72px;
+    display:grid; grid-template-columns:1fr 1px 0.95fr; align-items:center; gap:56px;
+  }
+  .af-funding__text{ margin:0; font-size:1.02rem; font-weight:600; color:var(--shell-100); }
+  .af-funding__text strong{ color:var(--shell-100); font-weight:600; }
+  .af-funding__divider{ width:1px; align-self:stretch; background:linear-gradient(var(--shell-15),var(--shell-15),transparent); }
+  .af-funding__logos{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; align-items:center; }
+  .af-funding__plate{
+    height:116px; padding:18px 26px; box-sizing:border-box;
+    border-radius:14px; background:var(--shell-100); box-shadow:0 6px 24px rgba(0,0,0,0.28);
+  }
+  .af-funding__plate img{ width:100%; height:100%; object-fit:contain; display:block; }
+  @media (max-width:900px){
+    .af-funding__inner{ grid-template-columns:1fr; gap:32px; }
+    .af-funding__divider{ display:none; }
+  }
 
   /* ---------- FAQ ---------- */
   .faq-item{
@@ -565,13 +584,13 @@
       <span class="brand-sub">by AccessFlora</span>
     </div>
     <ul class="nav-links">
-      <li><a href="https://accessflora.com/#what">The Oyster</a></li>
-      <li><a href="https://accessflora.com/#profile">Build Your Oyster</a></li>
-      <li><a href="https://accessflora.com/#about">About</a></li>
-      <li><a href="https://accessflora.com/#status">Timeline</a></li>
-      <li><a href="https://accessflora.com/#faq">FAQ</a></li>
+      <li><a href="#what">The Oyster</a></li>
+      <li><a href="#profile">Build Your Oyster</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#status">Timeline</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a class="nav-cta" href="https://accessflora.com/#profile">Request a Sample</a>
+    <a class="nav-cta" href="#profile">Request a Sample</a>
   </nav>
 </header>
 
@@ -584,7 +603,7 @@
       <h1>Consistent oysters, year-round.</h1>
       <p class="lede">SureSweet oysters are raised in purified, salinity-controlled water on a curated microalgae diet — so every batch you order tastes like the last one. Sediment-free, lab-tested, available year-round.</p>
       <div class="hero-actions">
-        <a href="https://accessflora.com/#profile" class="btn-primary">Request a Sample</a>
+        <a href="#profile" class="btn-primary">Request a Sample</a>
       </div>
     </div>
   </section>
@@ -749,6 +768,26 @@
     </div>
   </section>
 
+  <!-- FUNDING / PARTNERS -->
+  <section class="af-funding">
+    <div class="af-funding__inner">
+      <p class="af-funding__text">
+        <strong>AccessFlora</strong> is funded by <strong>CCEI</strong> and the
+        <strong>University of Connecticut School of Business</strong>. Powered by
+        <strong>Gates&nbsp;Foundation</strong>&#8209;backed technology.
+      </p>
+      <div class="af-funding__divider"></div>
+      <div class="af-funding__logos">
+        <div class="af-funding__plate">
+          <img src="./images/uconn-ccei.png" alt="UConn — Connecticut Center for Entrepreneurship and Innovation">
+        </div>
+        <div class="af-funding__plate">
+          <img src="./images/gates-foundation.png" alt="Gates Foundation">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- STATUS / TIMELINE -->
   <section id="status">
     <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
@@ -792,7 +831,7 @@
 
       <details class="faq-item" open="">
         <summary>Can I order SureSweet oysters right now?</summary>
-        <p>Not yet. We're starting production, with samples going out to our list this October. Request samples <a href="https://accessflora.com/#profile" style="color:var(--salinity); text-decoration:underline;">here</a>.</p>
+        <p>Not yet. We're starting production, with samples going out to our list this October. Request samples <a href="#profile" style="color:var(--salinity); text-decoration:underline;">here</a>.</p>
       </details>
       <details class="faq-item" open="">
         <summary>Who is SureSweet for?</summary>
@@ -822,11 +861,11 @@
         <span class="brand-mark">SureSweet</span>
       </div>
       <div class="footer-links">
-        <a href="https://accessflora.com/#what">The Oyster</a>
-        <a href="https://accessflora.com/#profile">Request a Sample</a>
-        <a href="https://accessflora.com/#about">About</a>
-        <a href="https://accessflora.com/#status">Timeline</a>
-        <a href="https://accessflora.com/#faq">FAQ</a>
+        <a href="#what">The Oyster</a>
+        <a href="#profile">Request a Sample</a>
+        <a href="#about">About</a>
+        <a href="#status">Timeline</a>
+        <a href="#faq">FAQ</a>
         <a href="mailto:keegan@reeftotable.com">Contact</a>
       </div>
     </div>
