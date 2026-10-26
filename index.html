@@ -1,971 +1,780 @@
 <!DOCTYPE html>
-<!-- saved from url=(0022)https://accessflora.com/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SureSweet - Custom Oysters</title>
-<meta name="description" content="SureSweet oysters are conditioned in purified water on a curated algae diet for controlled salinity, sweetness, and full flavor — every batch, year-round. Reserve your spot for October samples.">
-
-<meta property="og:title" content="SureSweet - Custom Oysters">
-<meta property="og:description" content="Custom-conditioned oysters with controlled salinity, sweetness, and size. Consistent, sediment-free, and tested — year-round.">
+<title>AccessFlora | Fish-Free Omega-3 for Shellfish Hatcheries</title>
+<meta name="description" content="AccessFlora grows whole-cell microalgal omega-3 DHA by closed fermentation — a fish-free, supply-secure feed and enrichment for oyster, clam, and shrimp hatcheries.">
+<meta property="og:title" content="AccessFlora | Fish-Free Omega-3 for Shellfish Hatcheries">
+<meta property="og:description" content="Whole-cell microalgal DHA, fermented in closed vessels. Built for bivalve and shrimp hatcheries, ready to replace fish oil.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://accessflora.com/images/logo-full.jpg">
+<meta property="og:url" content="https://accessflora.com/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SureSweet - Custom Oysters">
-<meta name="twitter:description" content="Custom-conditioned oysters with controlled salinity, sweetness, and size. Consistent, sediment-free, and tested — year-round.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./fonts.css" rel="stylesheet">
-
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --brine-900:#0a1f24;
-    --brine-800:#12303686;
-    --brine-800-solid:#123036;
-    --brine-700:#1b3d43;
-    --shell-100:#f4efe3;
-    --shell-60:rgba(244,239,227,0.6);
-    --shell-35:rgba(244,239,227,0.35);
-    --shell-15:rgba(244,239,227,0.12);
-    --salinity:#3bb3ac;
-    --salinity-dim:rgba(59,179,172,0.25);
-    --sweetness:#e3a94b;
-    --sweetness-dim:rgba(227,169,75,0.25);
-    --radius:14px;
-    --max:1120px;
+    --abyss:#071c2c;
+    --deep:#0c2e45;
+    --tide:#14506b;
+    --teal:#1f8a8a;
+    --sea:#5fc2b8;
+    --gold:#e6a93a;
+    --gold-soft:#f5d595;
+    --sand:#f7f3ea;
+    --paper:#fffdf8;
+    --ink:#10222e;
+    --muted:#55697a;
+    --line:#dfe6e8;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(7,28,44,.10);
+    --max:1160px;
   }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+  h1{font-size:clamp(2.4rem,5.6vw,4.3rem);font-weight:600}
+  h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:600}
+  h3{font-size:1.25rem;font-weight:600}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:640px}
+  section{padding:96px 0}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.98rem;text-decoration:none;transition:transform .15s ease,background .2s ease,box-shadow .2s ease;border:2px solid transparent;cursor:pointer}
+  .btn-gold{background:var(--gold);color:var(--abyss)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(230,169,58,.35)}
+  .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .btn-dark{background:var(--abyss);color:#fff}
+  .btn-dark:hover{background:var(--deep);transform:translateY(-2px)}
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
-  }
+  /* NAV */
+  header.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease,box-shadow .3s ease}
+  header.nav.scrolled{background:rgba(7,28,44,.94);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.2)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:1.35rem}
+  .logo img{height:36px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+  .nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.93rem;font-weight:500}
+  .nav-links a:hover{color:#fff}
+  .nav-links .btn{padding:10px 20px;font-size:.9rem}
+  .burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;border-radius:2px}
 
-  body{
-    margin:0;
-    background:var(--brine-900);
-    color:var(--shell-100);
-    font-family:'Work Sans', sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:radial-gradient(1200px 600px at 75% 30%,#13405b 0%,var(--abyss) 60%);color:#fff;overflow:hidden;padding:130px 0 90px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero p.lead{color:rgba(255,255,255,.78);margin:22px 0 34px}
+  .hero .eyebrow{color:var(--sea)}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
+  .hero-tags span{font-size:.82rem;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.85)}
+  .cells{width:100%;aspect-ratio:1/1}
+  .float{animation:float 9s ease-in-out infinite}
+  .float.d2{animation-delay:-3s;animation-duration:11s}
+  .float.d3{animation-delay:-6s;animation-duration:13s}
+  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(6px,-14px)}}
+  .spin{transform-origin:center;transform-box:fill-box;animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .wave{position:absolute;bottom:-1px;left:0;width:100%;height:90px;z-index:1}
+  @media (prefers-reduced-motion:reduce){.float,.spin{animation:none}}
 
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    margin:0 0 0.4em 0;
-    letter-spacing:-0.01em;
-  }
+  /* PROOF STRIP */
+  .strip{background:var(--sand);padding:34px 0;border-bottom:1px solid var(--line)}
+  .strip-inner{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:center}
+  .strip-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .strip-item{font-weight:600;color:var(--deep);font-size:.95rem;display:flex;align-items:center;gap:8px}
+  .strip-item::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
 
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-  }
+  /* PROBLEM */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .problem-cards{display:grid;gap:18px}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;display:grid;grid-template-columns:44px 1fr;gap:16px}
+  .pcard .num{width:44px;height:44px;border-radius:12px;background:#fdf3e1;color:#b77a12;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700}
+  .pcard h3{font-size:1.08rem;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:600}
+  .pcard p{color:var(--muted);font-size:.96rem}
 
-  a{color:inherit;}
+  /* PRODUCT */
+  .product{background:linear-gradient(180deg,var(--abyss),var(--deep));color:#fff}
+  .product .lead{color:rgba(255,255,255,.75)}
+  .product .eyebrow{color:var(--sea)}
+  .product-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-top:20px}
+  .micro img{width:100%;max-width:340px;border-radius:50%;box-shadow:0 0 0 6px rgba(95,194,184,.25),0 20px 50px rgba(0,0,0,.35)}
+  .micro figcaption{margin-top:20px;font-size:.88rem;color:rgba(255,255,255,.7);text-align:center;max-width:320px}
+  .jug{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:40px;display:grid;place-items:center}
+  .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+  .spec{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px}
+  .spec small{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);font-weight:600;margin-bottom:4px}
+  .spec strong{font-weight:600;font-size:1.02rem}
+  .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px}
+  .benefit{border-top:2px solid var(--gold);padding-top:18px}
+  .benefit h3{font-family:'Inter',sans-serif;font-size:1.02rem;margin-bottom:6px}
+  .benefit p{color:rgba(255,255,255,.7);font-size:.93rem}
 
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 28px;
-  }
+  /* APPLICATIONS */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 26px}
+  .tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 20px;font:inherit;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer;transition:all .2s}
+  .tab[aria-selected="true"]{background:var(--abyss);color:#fff;border-color:var(--abyss)}
+  .panel{display:none;grid-template-columns:1.1fr .9fr;gap:40px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:40px;box-shadow:var(--shadow)}
+  .panel.active{display:grid}
+  .panel h3{font-size:1.6rem;margin-bottom:12px}
+  .panel p{color:var(--muted);margin-bottom:16px}
+  .panel ul{list-style:none;display:grid;gap:10px}
+  .panel li{padding-left:28px;position:relative;font-size:.97rem}
+  .panel li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:var(--sea);box-shadow:inset 0 0 0 4px #e3f5f2}
+  .badge{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
+  .badge.now{background:#e3f5f2;color:#13716c}
+  .badge.next{background:#fdf3e1;color:#a26b0c}
+  .badge.later{background:#eceff3;color:#4b5d6d}
+  .panel-art{background:var(--sand);border-radius:16px;display:grid;place-items:center;padding:24px;min-height:240px}
+  .species{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+  .species span{background:var(--sand);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;color:var(--deep)}
+  .species-note{margin-top:12px;font-size:.9rem;color:var(--muted)}
 
-  section{padding:64px 0;}
-  @media (max-width:640px){ section{padding:48px 0; } }
+  /* COMPARISON */
+  .compare{background:var(--sand)}
+  .table-wrap{overflow-x:auto;margin-top:36px;border-radius:18px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;min-width:720px}
+  th,td{padding:18px 22px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem;vertical-align:top}
+  thead th{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:#fbfaf6}
+  thead th.us{background:var(--abyss);color:var(--gold-soft)}
+  td.us{background:#f2faf8;font-weight:600;color:var(--deep)}
+  tbody tr:last-child td{border-bottom:0}
+  td:first-child{font-weight:600;color:var(--ink)}
 
-  /* ---------- NAV ---------- */
-  header.site{
-    position:sticky; top:0; z-index:50;
-    background:rgba(10,31,36,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--shell-15);
-  }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 28px;
-    max-width:var(--max); margin:0 auto;
-    flex-wrap:wrap; gap:12px;
-  }
-  .brand{
-    display:flex; align-items:baseline; gap:10px;
-  }
-  .brand-mark{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size:1.3rem;
-  }
-  .brand-sub{
-    font-size:0.72rem;
-    color:var(--shell-60);
-  }
-  .nav-links{
-    display:flex; gap:28px; list-style:none; margin:0; padding:0;
-    font-size:0.92rem;
-  }
-  .nav-links a{
-    text-decoration:none;
-    color:var(--shell-60);
-    transition:color 0.2s ease;
-  }
-  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--shell-100); }
-  .nav-cta{
-    background:var(--salinity);
-    color:var(--brine-900);
-    padding:10px 18px;
-    border-radius:999px;
-    font-weight:600;
-    font-size:0.9rem;
-    text-decoration:none;
-    white-space:nowrap;
-    transition:transform 0.15s ease, background 0.15s ease;
-  }
-  .nav-cta:hover{ background:#4fc4bd; transform:translateY(-1px); }
-  @media (max-width:760px){ .nav-links{ display:none; } }
+  /* SCIENCE / PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px;counter-reset:step}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;position:relative}
+  .step::before{counter-increment:step;content:"0" counter(step);font-family:'Fraunces',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;margin-bottom:10px}
+  .step h3{font-family:'Inter',sans-serif;font-size:1.03rem;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:.93rem}
+  .science-note{margin-top:46px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--abyss);color:#fff;border-radius:22px;padding:34px 38px}
+  .science-note .q{font-family:'Fraunces',serif;font-size:3.4rem;line-height:.8;color:var(--gold)}
+  .science-note p{color:rgba(255,255,255,.85)}
+  .science-note a{color:var(--sea)}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:90px 0 50px;
-    position:relative;
-    overflow:hidden;
-  }
-  .eyebrow{
-    display:inline-block;
-    font-size:0.75rem;
-    color:var(--salinity);
-    background:var(--salinity-dim);
-    padding:6px 14px;
-    border-radius:999px;
-    margin-bottom:22px;
-  }
-  .hero h1{
-    font-size:clamp(2.4rem, 5.4vw, 4.2rem);
-    max-width:22ch;
-    color:var(--shell-100);
-  }
-  .hero p.lede{
-    font-size:clamp(1.05rem, 1.6vw, 1.25rem);
-    color:var(--shell-60);
-    max-width:56ch;
-    margin:0 0 34px 0;
-  }
-  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
-  .btn-primary{
-    background:var(--salinity);
-    color:var(--brine-900);
-    border:none;
-    padding:14px 26px;
-    border-radius:999px;
-    font-weight:600;
-    font-size:0.98rem;
-    text-decoration:none;
-    display:inline-block;
-    cursor:pointer;
-    transition:transform 0.15s ease, background 0.15s ease;
-  }
-  .btn-primary:hover{ background:#4fc4bd; transform:translateY(-1px); }
-  .btn-ghost{
-    border:1px solid var(--shell-35);
-    color:var(--shell-100);
-    padding:14px 26px;
-    border-radius:999px;
-    font-weight:500;
-    font-size:0.98rem;
-    text-decoration:none;
-    display:inline-block;
-    transition:border-color 0.15s ease, background 0.15s ease;
-  }
-  .btn-ghost:hover{ border-color:var(--shell-100); background:var(--shell-15); }
+  /* FISH OIL */
+  .fishoil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+  .fcard{border-radius:var(--radius);padding:30px;background:#fff;border:1px solid var(--line)}
+  .fcard .ico{width:48px;height:48px;border-radius:12px;background:#e3f5f2;display:grid;place-items:center;margin-bottom:16px}
+  .fcard h3{font-family:'Inter',sans-serif;font-size:1.08rem;margin-bottom:8px}
+  .fcard p{color:var(--muted);font-size:.95rem}
 
-  /* salinity gauge ambient graphic */
-  .gauge{
-    margin-top:64px;
-    max-width:640px;
-  }
-  .gauge svg{ width:100%; height:auto; display:block; }
-  .gauge-caption{
-    display:flex; justify-content:space-between;
-    font-size:0.7rem; color:var(--shell-35);
-    margin-top:6px;
-  }
+  /* ROADMAP */
+  .roadmap{background:linear-gradient(180deg,var(--deep),var(--abyss));color:#fff}
+  .roadmap .eyebrow{color:var(--sea)}
+  .roadmap .lead{color:rgba(255,255,255,.72)}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+  .timeline::before{content:"";position:absolute;top:11px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--sea),rgba(255,255,255,.2))}
+  .tl{padding-right:24px;position:relative}
+  .tl .dot{width:24px;height:24px;border-radius:50%;background:var(--abyss);border:3px solid var(--gold);margin-bottom:20px;position:relative;z-index:1}
+  .tl.future .dot{border-color:rgba(255,255,255,.4)}
+  .tl small{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+  .tl h3{font-family:'Inter',sans-serif;font-size:1.06rem;margin:6px 0}
+  .tl p{color:rgba(255,255,255,.7);font-size:.92rem}
 
-  /* ---------- VALUE GRID ---------- */
-  .section-head{ max-width:640px; margin-bottom:52px; }
-  .section-head .mono{ color:var(--sweetness); font-size:0.75rem; }
-  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.3rem); }
-  .section-head p{ color:var(--shell-60); }
+  /* ORIGIN / ABOUT */
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+  .portrait{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,var(--tide),var(--abyss));position:relative;box-shadow:var(--shadow)}
+  .portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+  .portrait .fallback{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.6);font-family:'Fraunces',serif;font-size:4rem}
+  .about-grid p{color:var(--muted);margin-bottom:16px}
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+  .cred{border-left:3px solid var(--gold);padding:4px 0 4px 14px;font-size:.93rem}
+  .cred strong{display:block;color:var(--ink)}
+  .cred span{color:var(--muted)}
+  .suresweet{margin-top:30px;display:flex;gap:16px;align-items:center;background:var(--sand);border-radius:16px;padding:18px 22px;border:1px solid var(--line)}
+  .suresweet p{margin:0;font-size:.94rem}
+  .suresweet a{font-weight:600;color:var(--teal)}
 
-  .value-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1px;
-    background:var(--shell-15);
-    border-radius:var(--radius);
-    overflow:hidden;
-  }
-  @media (max-width:860px){ .value-grid{ grid-template-columns:1fr; } }
-  .value-card{
-    background:var(--brine-800-solid);
-    padding:34px 32px;
-  }
-  .value-card .mono{ font-size:0.7rem; color:var(--salinity); }
-  .value-card h3{ font-size:1.25rem; margin-top:10px; color:var(--shell-100); }
-  .value-card p{ color:var(--shell-60); margin:10px 0 0 0; font-size:0.96rem; }
+  /* CONTACT */
+  .contact{background:var(--sand)}
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:var(--shadow);display:grid;gap:18px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{font-size:.85rem;font-weight:600;color:var(--deep);display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;font:inherit;font-size:.96rem;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fcfcfa;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--sea);outline-offset:1px;border-color:transparent}
+  textarea{min-height:110px;resize:vertical}
+  .checks{display:flex;flex-wrap:wrap;gap:8px}
+  .checks label{display:inline-flex;align-items:center;gap:7px;font-weight:500;font-size:.9rem;background:var(--sand);border:1px solid var(--line);border-radius:999px;padding:7px 14px;margin:0;cursor:pointer}
+  .checks input{width:auto;margin:0;accent-color:var(--teal)}
+  .form-note{font-size:.82rem;color:var(--muted)}
+  .contact-list{list-style:none;display:grid;gap:18px;margin-top:30px}
+  .contact-list li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+  .contact-list .ci{width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center}
+  .contact-list strong{display:block}
+  .contact-list span,.contact-list a{color:var(--muted);font-size:.95rem;text-decoration:none}
+  .contact-list a:hover{color:var(--teal)}
+  #form-status{font-weight:600;color:var(--teal);display:none}
 
-  /* ---------- HOW IT WORKS ---------- */
-  .steps{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:20px;
-  }
-  @media (max-width:1000px){ .steps{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .steps{ grid-template-columns:1fr; } }
-  .step{
-    border-top:2px solid var(--salinity);
-    padding-top:18px;
-  }
-  .step .mono{ font-size:0.7rem; color:var(--shell-35); }
-  .step h3{ font-size:1.1rem; margin-top:8px; }
-  .step p{ color:var(--shell-60); font-size:0.92rem; }
+  /* FOOTER */
+  footer{background:var(--abyss);color:rgba(255,255,255,.65);padding:56px 0 34px;font-size:.9rem}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  footer h4{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  footer ul{list-style:none;display:grid;gap:8px}
+  footer a{text-decoration:none}
+  footer a:hover{color:#fff}
+  .foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem}
 
-  /* ---------- PROFILE BUILDER (signature element) ---------- */
-  .profile-section{
-    background:var(--brine-800-solid);
-    border-radius:24px;
-    padding:56px;
-  }
-  @media (max-width:640px){ .profile-section{ padding:32px 22px; border-radius:16px; } }
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
 
-  .profile-layout{
-    display:grid;
-    grid-template-columns:1.05fr 0.95fr;
-    gap:56px;
-    align-items:start;
-  }
-  @media (max-width:860px){ .profile-layout{ grid-template-columns:1fr; } }
-
-  .reference-block{ margin-bottom:36px; }
-  .profile-chips{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:12px;
-  }
-  .profile-chip{
-    background:var(--brine-900);
-    border:1px solid var(--shell-15);
-    color:var(--shell-100);
-    border-radius:10px;
-    padding:10px 14px;
-    text-align:left;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    gap:3px;
-    transition:border-color 0.15s ease, transform 0.15s ease;
-  }
-  .profile-chip:hover, .profile-chip:focus-visible{
-    border-color:var(--salinity);
-    transform:translateY(-1px);
-  }
-  .profile-chip.active{
-    border-color:var(--sweetness);
-    background:var(--sweetness-dim);
-  }
-  .profile-chip .chip-name{ font-size:0.85rem; font-weight:600; }
-  .profile-chip .chip-tag{
-    font-size:0.72rem;
-    color:var(--shell-60);
-    font-family:'IBM Plex Mono', monospace;
-    text-transform:none;
-    letter-spacing:0;
-  }
-
-  .slider-block{ margin-bottom:34px; }
-  .slider-label{
-    display:flex; justify-content:space-between; align-items:baseline;
-    margin-bottom:10px;
-  }
-  .slider-label .name{ font-weight:600; font-size:0.98rem; }
-  .slider-label .readout{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.85rem;
-  }
-  .slider-label .readout.salinity{ color:var(--salinity); }
-  .slider-label .readout.sweetness{ color:var(--sweetness); }
-
-  input[type=range]{
-    -webkit-appearance:none;
-    width:100%;
-    height:4px;
-    border-radius:999px;
-    background:var(--shell-15);
-    outline:none;
-  }
-  input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance:none;
-    width:20px; height:20px;
-    border-radius:50%;
-    background:var(--shell-100);
-    border:3px solid var(--brine-900);
-    cursor:pointer;
-  }
-  input#salinity::-webkit-slider-thumb{ border-color:var(--salinity); }
-  input#sweetness::-webkit-slider-thumb{ border-color:var(--sweetness); }
-  input[type=range]::-moz-range-thumb{
-    width:14px; height:14px; border-radius:50%;
-    background:var(--shell-100); border:3px solid var(--salinity); cursor:pointer;
-  }
-  .scale-ticks{
-    display:flex; justify-content:space-between;
-    font-size:0.68rem; color:var(--shell-35); margin-top:6px;
-  }
-
-  .flavor-notes label{
-    display:block; font-weight:600; font-size:0.98rem; margin-bottom:10px;
-  }
-  textarea, input[type=email], input[type=text]{
-    width:100%;
-    background:var(--brine-900);
-    border:1px solid var(--shell-15);
-    color:var(--shell-100);
-    border-radius:10px;
-    padding:13px 14px;
-    font-family:'Work Sans', sans-serif;
-    font-size:0.95rem;
-  }
-  textarea:focus, input:focus{
-    outline:2px solid var(--salinity);
-    outline-offset:1px;
-  }
-  textarea{ resize:vertical; min-height:80px; }
-
-  /* live plot */
-  .plot-card{
-    background:var(--brine-900);
-    border:1px solid var(--shell-15);
-    border-radius:16px;
-    padding:26px;
-  }
-  .plot-title{ font-size:0.72rem; color:var(--shell-35); margin-bottom:18px; }
-  .plot-wrap{
-    display:grid;
-    grid-template-columns:26px 1fr;
-    grid-template-rows:1fr 18px;
-    gap:6px;
-  }
-  .plot-y-ticks{
-    grid-column:1; grid-row:1;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:flex-end;
-    font-size:0.62rem;
-    color:var(--shell-35);
-    padding:2px 0;
-  }
-  .plot-x-ticks{
-    grid-column:2; grid-row:2;
-    display:flex;
-    justify-content:space-between;
-    font-size:0.62rem;
-    color:var(--shell-35);
-  }
-  .plot-axis-caption{
-    margin:10px 0 0 0;
-    font-size:0.68rem;
-    color:var(--shell-35);
-  }
-  .plot-area{
-    grid-column:2; grid-row:1;
-    position:relative;
-    aspect-ratio:1/1;
-    width:100%;
-    border-left:1px solid var(--shell-15);
-    border-bottom:1px solid var(--shell-15);
-    background:
-      linear-gradient(to top, var(--shell-15) 1px, transparent 1px) 0 0/100% 25%,
-      linear-gradient(to right, var(--shell-15) 1px, transparent 1px) 0 0/25% 100%;
-  }
-  .plot-dot{
-    position:absolute;
-    width:16px; height:16px;
-    border-radius:50%;
-    background:radial-gradient(circle at 35% 35%, #fff, var(--salinity) 70%);
-    box-shadow:0 0 0 6px var(--salinity-dim);
-    transform:translate(-50%, 50%);
-    transition:left 0.12s ease, bottom 0.12s ease;
-  }
-
-  .readout-line{
-    margin-top:20px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.95rem;
-    color:var(--shell-100);
-    background:var(--brine-800-solid);
-    border-radius:10px;
-    padding:14px 16px;
-  }
-  .readout-line span{ color:var(--shell-35); }
-
-  .form-row{ margin-bottom:20px; }
-  .form-note{
-    font-size:0.78rem;
-    color:var(--shell-35);
-    margin-top:10px;
-  }
-  .form-status{
-    margin-top:16px;
-    font-size:0.9rem;
-    padding:12px 14px;
-    border-radius:10px;
-    display:none;
-  }
-  .form-status.show{ display:block; }
-  .form-status.warn{ background:rgba(227,169,75,0.15); color:var(--sweetness); }
-  .form-status.ok{ background:rgba(59,179,172,0.15); color:var(--salinity); }
-
-  /* ---------- STATUS / TIMELINE ---------- */
-  .timeline{
-    display:flex;
-    justify-content:space-between;
-    position:relative;
-    margin-top:48px;
-    gap:12px;
-  }
-  .timeline::before{
-    content:"";
-    position:absolute;
-    top:9px; left:0; right:0;
-    height:2px;
-    background:var(--shell-15);
-  }
-  .tl-stage{
-    position:relative;
-    flex:1;
-    text-align:left;
-  }
-  .tl-dot{
-    width:20px; height:20px;
-    border-radius:50%;
-    background:var(--brine-900);
-    border:2px solid var(--shell-35);
-    margin-bottom:16px;
-  }
-  .tl-stage.active .tl-dot{
-    border-color:var(--salinity);
-    background:var(--salinity);
-    box-shadow:0 0 0 5px var(--salinity-dim);
-  }
-  .tl-stage.done .tl-dot{ border-color:var(--salinity); background:var(--brine-900); }
-  .tl-stage h4{
-    font-size:0.92rem; margin:0 0 6px 0; color:var(--shell-100);
-  }
-  .tl-stage p{ font-size:0.82rem; color:var(--shell-60); margin:0; padding-right:10px; }
-  @media (max-width:760px){
-    .timeline{ flex-direction:column; gap:28px; }
-    .timeline::before{ display:none; }
-  }
-
-  /* ---------- ABOUT ---------- */
-  .about-content{ max-width:640px; }
-  .about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:56px;
-    align-items:center;
-  }
-  @media (max-width:760px){ .about-grid{ grid-template-columns:1fr; } }
-  .quote-block{
-    border-left:2px solid var(--sweetness);
-    padding-left:22px;
-    font-family:'Fraunces', serif;
-    font-size:1.3rem;
-    color:var(--shell-100);
-    font-weight:500;
-  }
-
-  /* ---------- FOUNDER / ABOUT ---------- */
-  .about-section{
-    background:var(--brine-800-solid);
-    border-top:1px solid var(--shell-15);
-    border-bottom:1px solid var(--shell-15);
-  }
-  .about-media{
-    position:relative;
-    max-width:440px;
-    margin:0 auto;
-  }
-  .about-photo-main{
-    width:100%;
-    aspect-ratio:4/5;
-    object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 24px 48px rgba(0,0,0,0.35);
-    display:block;
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .hero-grid,.two-col,.product-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .hero-art{max-width:380px;margin:0 auto}
+    .benefits,.steps{grid-template-columns:1fr 1fr}
+    .fishoil-grid{grid-template-columns:1fr}
+    .panel,.panel.active{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr 1fr;row-gap:40px}
+    .timeline::before{display:none}
+    .foot{grid-template-columns:1fr 1fr}
+    .portrait{max-width:360px}
   }
   @media (max-width:760px){
-    .about-media{ max-width:340px; margin-bottom:56px; }
-  }
-  .about-text .mono{ color:var(--sweetness); font-size:0.75rem; }
-  .about-text h2{ margin-top:14px; font-size:clamp(1.7rem, 3vw, 2.3rem); }
-  .about-text p{ color:var(--shell-60); margin-top:18px; }
-
-  /* ---------- FAQ ---------- */
-  .faq-item{
-    border-bottom:1px solid var(--shell-15);
-    padding:22px 0;
-  }
-  .faq-item summary{
-    cursor:pointer;
-    font-weight:600;
-    font-size:1.02rem;
-    list-style:none;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  .faq-item summary::-webkit-details-marker{ display:none; }
-  .faq-item summary::after{
-    content:"+";
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--salinity);
-    font-size:1.2rem;
-  }
-  .faq-item[open] summary::after{ content:"–"; }
-  .faq-item p{ color:var(--shell-60); margin:14px 0 0 0; max-width:65ch; }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    border-top:1px solid var(--shell-15);
-    padding:48px 0 36px;
-  }
-  .footer-grid{
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px;
-    margin-bottom:28px;
-  }
-  .footer-grid .brand-mark{ font-size:1.1rem; }
-  .footer-links{ display:flex; gap:22px; flex-wrap:wrap; font-size:0.88rem; }
-  .footer-links a{ text-decoration:none; color:var(--shell-60); }
-  .footer-links a:hover{ color:var(--shell-100); }
-  .legal{
-    font-size:0.78rem;
-    color:var(--shell-35);
-    line-height:1.7;
+    section{padding:72px 0}
+    .nav-links{position:fixed;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--abyss);padding:10px 24px 24px;display:none}
+    .nav-links.open{display:flex}
+    .nav-links li{width:100%;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-links li:last-child{border:0;padding-top:18px}
+    .burger{display:block}
+    header.nav.open-bg{background:var(--abyss)}
+    .benefits,.steps,.spec-grid,.row,.creds,.timeline{grid-template-columns:1fr}
+    .panel{padding:26px}
+    .foot{grid-template-columns:1fr}
+    .science-note{grid-template-columns:1fr;padding:28px}
   }
 </style>
 </head>
 <body>
 
-<header class="site">
-  <nav class="nav">
-    <div class="brand">
-      <span class="brand-mark">SureSweet</span>
-      <span class="brand-sub">by AccessFlora</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="https://accessflora.com/#what">The Oyster</a></li>
-      <li><a href="https://accessflora.com/#profile">Build Your Oyster</a></li>
-      <li><a href="https://accessflora.com/#about">About</a></li>
-      <li><a href="https://accessflora.com/#status">Timeline</a></li>
-      <li><a href="https://accessflora.com/#faq">FAQ</a></li>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="AccessFlora home">
+      <img src="images/logo-mark-white.png" alt="" width="46" height="36">
+      AccessFlora
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#product">Product</a></li>
+      <li><a href="#applications">Hatcheries</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#fish-oil">Beyond Fish Oil</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="btn btn-gold">Request a Trial</a></li>
     </ul>
-    <a class="nav-cta" href="https://accessflora.com/#profile">Request a Sample</a>
-  </nav>
+  </div>
 </header>
 
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <span class="eyebrow mono">For Chefs &amp; Buyers</span>
-      <h1>Consistent oysters, year-round.</h1>
-      <p class="lede">SureSweet oysters are raised in purified, salinity-controlled water on a curated microalgae diet — so every batch you order tastes like the last one. Sediment-free, lab-tested, available year-round.</p>
-      <div class="hero-actions">
-        <a href="https://accessflora.com/#profile" class="btn-primary">Request a Sample</a>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Microalgal Omega-3 for Aquaculture</span>
+      <h1>Fish-free omega-3, <em>built for shellfish hatcheries.</em></h1>
+      <p class="lead">AccessFlora grows a whole-cell, DHA-rich microalga by closed fermentation and delivers it as a ready-to-feed concentrate. Consistent nutrition for oyster, clam, and shrimp larvae — without depending on wild fish or fragile live cultures.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-gold">Join a Hatchery Trial →</a>
+        <a href="#product" class="btn btn-ghost">How It Works</a>
+      </div>
+      <div class="hero-tags">
+        <span>Whole-cell DHA</span><span>Fermentation-grown</span><span>Fish-free</span><span>Made in New England</span>
       </div>
     </div>
-  </section>
+    <div class="hero-art" aria-hidden="true">
+      <svg class="cells" viewBox="0 0 400 400">
+        <defs>
+          <radialGradient id="cellA" cx="40%" cy="35%" r="70%">
+            <stop offset="0" stop-color="#f5d595"/><stop offset=".55" stop-color="#e6a93a"/><stop offset="1" stop-color="#a86f12"/>
+          </radialGradient>
+          <radialGradient id="cellB" cx="40%" cy="35%" r="70%">
+            <stop offset="0" stop-color="#a9e6de"/><stop offset=".6" stop-color="#5fc2b8"/><stop offset="1" stop-color="#1f8a8a"/>
+          </radialGradient>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#5fc2b8" stop-opacity=".25"/><stop offset="1" stop-color="#5fc2b8" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="190" fill="url(#glow)"/>
+        <g class="spin"><circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.12)" stroke-dasharray="3 9"/></g>
+        <!-- main dinoflagellate cell -->
+        <g class="float">
+          <ellipse cx="200" cy="200" rx="92" ry="98" fill="url(#cellA)"/>
+          <path d="M110 205 Q200 168 290 205" fill="none" stroke="#7a4f0a" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+          <path d="M200 106 Q186 150 200 205" fill="none" stroke="#7a4f0a" stroke-width="3" opacity=".35"/>
+          <circle cx="172" cy="170" r="13" fill="#fff5dc" opacity=".8"/>
+          <circle cx="226" cy="238" r="9" fill="#fff5dc" opacity=".7"/>
+          <circle cx="238" cy="160" r="6" fill="#fff5dc" opacity=".7"/>
+          <circle cx="180" cy="250" r="7" fill="#fff5dc" opacity=".6"/>
+          <path d="M290 205 q30 8 40 -18 q8 -22 30 -18" fill="none" stroke="#f5d595" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <g class="float d2">
+          <ellipse cx="78" cy="98" rx="30" ry="32" fill="url(#cellB)"/>
+          <path d="M50 100 Q78 88 106 100" fill="none" stroke="#0e5c5c" stroke-width="3" opacity=".5"/>
+        </g>
+        <g class="float d3">
+          <ellipse cx="330" cy="318" rx="36" ry="38" fill="url(#cellA)" opacity=".9"/>
+          <path d="M296 320 Q330 306 364 320" fill="none" stroke="#7a4f0a" stroke-width="3" opacity=".5"/>
+        </g>
+        <g class="float d3"><circle cx="70" cy="300" r="14" fill="url(#cellB)" opacity=".85"/></g>
+        <g class="float d2"><circle cx="338" cy="84" r="10" fill="url(#cellA)" opacity=".8"/></g>
+        <g class="float"><circle cx="40" cy="200" r="6" fill="#5fc2b8" opacity=".7"/></g>
+        <g class="float d2"><circle cx="360" cy="210" r="5" fill="#f5d595" opacity=".7"/></g>
+      </svg>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 50 C240 90 480 10 720 40 C960 70 1200 20 1440 45 L1440 90 L0 90 Z" fill="#f7f3ea"/>
+  </svg>
+</section>
 
-  <!-- WHAT / VALUE PROPS -->
-  <section id="what">
-    <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div class="section-head">
-        <span class="mono">The Oyster</span>
-        <h2>Certainty, on the half shell.</h2>
-        <p>Wild oysters vary by the day. SureSweet oysters are raised in controlled conditions, so you get the same profile in every order, whenever you order it.</p>
+<!-- ============ PROOF STRIP ============ -->
+<div class="strip">
+  <div class="wrap strip-inner">
+    <span class="strip-label">Backed by</span>
+    <span class="strip-item">Wolff New Venture Competition Winner</span>
+    <span class="strip-item">UConn Dept. of Nutritional Sciences</span>
+    <span class="strip-item">UConn CCEI Accelerator</span>
+  </div>
+</div>
+
+<!-- ============ PROBLEM ============ -->
+<section id="problem">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow">The Hatchery Bottleneck</span>
+      <h2>Larvae can't wait for a better fishing season.</h2>
+      <p class="lead" style="margin-top:18px">The first weeks of a shellfish's life set the ceiling for everything after. That window depends on long-chain omega-3s — especially DHA — and today hatcheries source them from two places that both break down at the worst possible time.</p>
+    </div>
+    <div class="problem-cards reveal">
+      <div class="pcard">
+        <div class="num">1</div>
+        <div><h3>Live algae cultures crash</h3><p>In-house phytoplankton takes constant labor, space, and lighting — and a single contamination event can wipe out a feeding schedule mid-run.</p></div>
+      </div>
+      <div class="pcard">
+        <div class="num">2</div>
+        <div><h3>Fish oil is volatile</h3><p>Fish-oil-based enrichments ride on wild anchovy harvests. El Niño years and cancelled fishing seasons send supply and price swinging.</p></div>
+      </div>
+      <div class="pcard">
+        <div class="num">3</div>
+        <div><h3>Nutrition varies batch to batch</h3><p>When DHA levels drift between batches, so do growth and survival — and hatcheries lose the predictability they need to plan seed sales.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROFILE BUILDER + SIGNUP -->
-  <section id="profile">
-    <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div class="profile-section">
-        <div class="section-head" style="margin-bottom:40px;">
-          <span class="mono">Build Your Oyster</span>
-          <h2>Tell us the oyster you want.</h2>
-          <p>Move the sliders to the profile you'd want on your menu. We'll save it with your email and reach out when samples are ready.</p>
+<!-- ============ PRODUCT ============ -->
+<section class="product" id="product">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The Product</span>
+      <h2>A whole-cell omega-3 concentrate,<br>ready from the jug.</h2>
+      <p class="lead" style="margin-top:16px">We ferment our own proprietary marine microalga — one that naturally makes DHA its dominant omega-3 — and harvest the whole cells into a liquid concentrate. Nothing is extracted or solvent-refined: the oil stays packaged inside the cell, the way filter feeders find it in nature.</p>
+    </div>
+    <div class="product-grid">
+      <figure class="jug micro reveal">
+        <img src="images/algae-micrograph.png" alt="AccessFlora microalgae cells under a microscope, golden with stored oil" width="456" height="457" loading="lazy">
+        <figcaption>Our microalgae under the microscope. The golden color is stored oil, rich in DHA.</figcaption>
+      </figure>
+      <div class="reveal">
+        <div class="spec-grid">
+          <div class="spec"><small>Organism</small><strong>Proprietary marine microalga</strong></div>
+          <div class="spec"><small>Format</small><strong>Whole-cell liquid concentrate</strong></div>
+          <div class="spec"><small>Key nutrient</small><strong>DHA (omega-3), in-cell</strong></div>
+          <div class="spec"><small>Sold by</small><strong>The gallon — 500 g biomass each</strong></div>
+          <div class="spec"><small>Grown in</small><strong>Closed, pre-sterilized bioreactors</strong></div>
+          <div class="spec"><small>Inputs</small><strong>Seawater medium, no fish, no light</strong></div>
         </div>
-
-        <form id="signup-form" class="profile-layout" action="https://formspree.io/f/xbdvwaeq" method="POST">
-          <!--
-            Connected to Formspree (https://formspree.io/f/xbdvwaeq).
-            Submissions are handled via AJAX in the script at the bottom of this file, so the
-            visitor sees an inline confirmation instead of being redirected off the page.
-            Log in to formspree.io to view/export submissions or change notification emails.
-          -->
-
-          <div>
-            <div class="reference-block">
-              <span class="mono" style="font-size:0.7rem; color:var(--shell-35);">Or Start From A Classic</span>
-              <div class="profile-chips" id="profile-chips">
-                <button type="button" class="profile-chip" data-salinity="30" data-sweetness="11">
-                  <span class="chip-name">Wellfleet, USA</span>
-                  <span class="chip-tag">Briny &amp; mineral</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="24" data-sweetness="16">
-                  <span class="chip-name">Blue Point, USA</span>
-                  <span class="chip-tag">Classic &amp; balanced</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="14" data-sweetness="22">
-                  <span class="chip-name">Chesapeake, USA</span>
-                  <span class="chip-tag">Low brine &amp; sweet</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="16" data-sweetness="32">
-                  <span class="chip-name">Pacific Northwest, USA</span>
-                  <span class="chip-tag">Buttery &amp; sweetest</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="22" data-sweetness="23">
-                  <span class="chip-name">Marennes-Oléron, France</span>
-                  <span class="chip-tag">Nutty &amp; subtly sweet</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="33" data-sweetness="10">
-                  <span class="chip-name">Galway Bay, Ireland</span>
-                  <span class="chip-tag">Bold &amp; briny</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="27" data-sweetness="19">
-                  <span class="chip-name">Sydney, Australia</span>
-                  <span class="chip-tag">Creamy &amp; mineral</span>
-                </button>
-                <button type="button" class="profile-chip" data-salinity="20" data-sweetness="20">
-                  <span class="chip-name">Chiloé, Chile</span>
-                  <span class="chip-tag">Clean &amp; mild sweet</span>
-                </button>
-              </div>
-              <p class="form-note" style="margin-top:10px;">Illustrative reference points based on classic regional character, not exact measurements. Tap one to set your sliders, then adjust from there.</p>
-            </div>
-
-            <div class="slider-block">
-              <div class="slider-label">
-                <span class="name">Salinity</span>
-                <span class="readout salinity mono" id="salinity-readout">11 ppt · Fresh</span>
-              </div>
-              <input type="range" id="salinity" name="salinity_ppt" min="10" max="35" value="22" step="1">
-              <div class="scale-ticks mono"><span>Fresh · 10</span><span>Most Salty · 35</span></div>
-            </div>
-
-            <div class="slider-block">
-              <div class="slider-label">
-                <span class="name">Sweetness</span>
-                <span class="readout sweetness mono" id="sweetness-readout">20% Glycogen · Subtly Sweet</span>
-              </div>
-              <input type="range" id="sweetness" name="sweetness_glycogen_pct" min="5" max="35" value="23" step="1">
-              <div class="scale-ticks mono"><span>Standard · 5%</span><span>Sweetest · 35%</span></div>
-            </div>
-
-            <div class="slider-block">
-              <div class="slider-label">
-                <span class="name">Size</span>
-                <span class="readout salinity mono" id="size-readout">2.5" · Petite</span>
-              </div>
-              <input type="range" id="size" name="size_in" min="2.5" max="3.5" value="3" step="0.1">
-              <div class="scale-ticks mono"><span>Petite · 2.5"</span><span>Large · 3.5"</span></div>
-            </div>
-
-            <div class="form-row flavor-notes">
-              <label for="notes">Specific flavor notes you're after (optional)</label>
-              <textarea id="notes" name="flavor_notes" placeholder="e.g. buttery finish, faint cucumber note, minimal brine on the nose"></textarea>
-            </div>
-
-            <div class="form-row">
-              <label for="email" style="display:block; font-weight:600; font-size:0.98rem; margin-bottom:10px;">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@restaurant.com" required="">
-            </div>
-
-            <button type="submit" class="btn-primary" style="border:none; width:100%; cursor:pointer;">Join the List</button>
-            <p class="form-note">We'll only use this to notify you when samples are ready and to share progress updates. No spam, unsubscribe anytime.</p>
-            <div class="form-status" id="form-status"></div>
-          </div>
-
-          <div class="plot-card">
-            <div class="plot-title mono">Your Profile, Plotted</div>
-            <div class="plot-wrap">
-              <div class="plot-y-ticks mono">
-                <span>35</span>
-                <span>28</span>
-                <span>20</span>
-                <span>13</span>
-                <span>5</span>
-              </div>
-              <div class="plot-area" id="plot-area">
-                <div class="plot-dot" id="plot-dot" style="left: 4%; bottom: 50%;"></div>
-              </div>
-              <div></div>
-              <div class="plot-x-ticks mono">
-                <span>10</span>
-                <span>16</span>
-                <span>23</span>
-                <span>29</span>
-                <span>35</span>
-              </div>
-            </div>
-            <p class="plot-axis-caption mono">X: Salinity (ppt) · Y: Sweetness (% glycogen)</p>
-            <div class="readout-line">
-              <span>Target profile:</span> <span id="combined-readout">11 ppt Fresh · 20% glycogen Subtly Sweet · 2.5" Petite</span>
-            </div>
-          </div>
-        </form>
+        <!-- TODO: add guaranteed analysis (DHA % of dry weight, cells/mL, shelf life, storage temp) once COA data is final -->
       </div>
     </div>
-  </section>
+    <div class="benefits">
+      <div class="benefit reveal"><h3>Consistent by design</h3><p>Fermentation runs to the same pH and medium every batch, so the DHA your larvae get doesn't drift with the season.</p></div>
+      <div class="benefit reveal"><h3>Secure supply</h3><p>No dependence on anchovy quotas, ocean conditions, or imported fish oil. We grow it in New England, on demand.</p></div>
+      <div class="benefit reveal"><h3>Less culture risk</h3><p>Supplement or back up your live algae room with a shelf-ready feed that can't crash overnight.</p></div>
+      <div class="benefit reveal"><h3>Clean from the start</h3><p>Grown in closed vessels, the cells are never exposed to the ocean contaminants that wild-caught oils have to be refined to remove.</p></div>
+    </div>
+  </div>
+</section>
 
-  <!-- FOUNDER / ABOUT -->
-  <section id="about" class="about-section">
-    <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div class="about-grid">
-        <div class="about-media">
-          <img class="about-photo-main" src="./keegan-photo.jpg" alt="Keegan, founder of AccessFlora">
-        </div>
-        <div class="about-text">
-          <span class="mono">Meet The Founder</span>
-          <h2>Farming, nutrition, and oyster sales.</h2>
-          <p>Hi, I'm Keegan. During my graduate studies, I learned aquaculture firsthand — from Australia and Ecuador to right here in Connecticut — which led me to launch a mobile raw bar selling oysters.</p>
-          <p>Along the way, I saw a growing vulnerability: ocean unpredictability was making our oyster supply inconsistent. So I created AccessFlora. Using a proprietary natural aquafeed, we raise oysters that are safe, rich in Omega-3s, and fully controlled in flavor — meaning year-round consistency.</p>
-        </div>
+<!-- ============ APPLICATIONS ============ -->
+<section id="applications">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Applications</span>
+      <h2>Starting where omega-3 matters most: the hatchery.</h2>
+      <p class="lead" style="margin-top:16px">Shellfish hatcheries are our first market — filter-feeding larvae take up whole cells directly, so there's no extraction step between our bioreactor and your tanks.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Applications">
+      <button class="tab" role="tab" aria-selected="true" data-panel="p-bivalve">Oysters &amp; Clams</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-shrimp">Shrimp</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-livefeed">Live-Feed Enrichment</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-finfish">Finfish &amp; Beyond</button>
+    </div>
+
+    <div class="panel active" id="p-bivalve" role="tabpanel">
+      <div>
+        <span class="badge now">Now · Trials underway</span>
+        <h3>Bivalve hatcheries</h3>
+        <p>Oyster and clam larvae filter particles straight from the water column. Our whole-cell concentrate gives them a direct DHA source alongside — or partially in place of — the live algae you already grow.</p>
+        <ul>
+          <li>Larval rearing and setting</li>
+          <li>Broodstock conditioning ahead of spawning</li>
+          <li>Nursery and upweller supplementation</li>
+          <li>Backup feed when live cultures underperform</li>
+        </ul>
+      </div>
+      <div class="panel-art"><img src="images/oyster.png" alt="An oyster raised on AccessFlora feed, shucked on the half shell" width="798" height="578" loading="lazy" style="max-width:320px;width:100%;height:auto;filter:drop-shadow(0 12px 22px rgba(7,28,44,.25))"></div>
+    </div>
+
+    <div class="panel" id="p-shrimp" role="tabpanel">
+      <div>
+        <span class="badge next">Next · Pilots 2027</span>
+        <h3>Shrimp hatcheries</h3>
+        <p>Penaeid larvae pass through algae-feeding stages before moving to live and formulated feeds. DHA supports development, stress tolerance, and post-larval quality.</p>
+        <ul>
+          <li>Zoea and mysis stage algal feeding</li>
+          <li>Broodstock maturation diets</li>
+          <li>Biomass ingredient for hatchery and nursery feeds</li>
+          <li>Pilot partnerships planned in Latin America</li>
+        </ul>
+      </div>
+      <div class="panel-art" aria-hidden="true">
+        <svg viewBox="0 0 220 180" width="230">
+          <path d="M40 110 Q60 50 130 55 Q185 60 190 100 Q170 90 150 95 Q120 100 110 125 Q90 150 60 140 Q38 132 40 110z" fill="#f1b48a" stroke="#b96e3e" stroke-width="3"/>
+          <path d="M80 70 Q85 110 75 140 M105 60 Q112 100 102 132 M130 58 Q138 90 128 110" fill="none" stroke="#b96e3e" stroke-width="2"/>
+          <path d="M185 70 Q205 40 212 20 M180 66 Q195 34 196 12" fill="none" stroke="#b96e3e" stroke-width="2"/>
+          <circle cx="172" cy="80" r="4" fill="#10222e"/>
+          <circle cx="30" cy="40" r="6" fill="#e6a93a"/><circle cx="50" cy="20" r="4" fill="#5fc2b8"/>
+        </svg>
       </div>
     </div>
-  </section>
 
-  <!-- STATUS / TIMELINE -->
-  <section id="status">
-    <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div class="section-head">
-        <span class="mono">Where We Are Now</span>
-        <h2>Not on the menu yet. Almost there.</h2>
-        <p>SureSweet oysters aren't available for commercial sale today. Here's where things stand, and what's left before your first sample.</p>
+    <div class="panel" id="p-livefeed" role="tabpanel">
+      <div>
+        <span class="badge next">Next · In development</span>
+        <h3>Rotifer &amp; <em>Artemia</em> enrichment</h3>
+        <p>Live prey are only as nutritious as what they eat. Feeding DHA-rich microalgae to rotifers and <em>Artemia</em> before they go to the larval tanks is a standard way to raise their omega-3 content.</p>
+        <ul>
+          <li>Pre-harvest enrichment of rotifers</li>
+          <li><em>Artemia</em> nauplii enrichment</li>
+          <li>Fish-free alternative to oil emulsions</li>
+        </ul>
       </div>
-      <div class="timeline">
-        <div class="tl-stage done">
-          <div class="tl-dot"></div>
-          <h4>Oyster Optimization</h4>
-          <p>Oyster customization protocols developed and validated at the University of Connecticut, Department of Nutritional Sciences.</p>
-        </div>
-        <div class="tl-stage active">
-          <div class="tl-dot"></div>
-          <h4>Commercial Facility</h4>
-          <p>Operation begins in an active aquaculture facility equipped with water purification systems and access to clean ocean water.</p>
-        </div>
-        <div class="tl-stage">
-          <div class="tl-dot"></div>
-          <h4>License for Sales</h4>
-          <p>Finalizing regulatory review for commercial sale.</p>
-        </div>
-        <div class="tl-stage">
-          <div class="tl-dot"></div>
-          <h4>October Samples</h4>
-          <p>First samples go out to chefs and buyers on the list.</p>
-        </div>
+      <div class="panel-art" aria-hidden="true">
+        <svg viewBox="0 0 220 180" width="230">
+          <ellipse cx="110" cy="95" rx="38" ry="55" fill="#cfe9e5" stroke="#1f8a8a" stroke-width="3"/>
+          <circle cx="110" cy="80" r="14" fill="#e6a93a" opacity=".8"/><circle cx="100" cy="112" r="9" fill="#e6a93a" opacity=".7"/><circle cx="122" cy="118" r="7" fill="#e6a93a" opacity=".7"/>
+          <path d="M90 42 q-8 -14 -2 -24 M130 42 q8 -14 2 -24" fill="none" stroke="#1f8a8a" stroke-width="3" stroke-linecap="round"/>
+          <path d="M110 150 v18" stroke="#1f8a8a" stroke-width="3"/>
+          <circle cx="40" cy="60" r="7" fill="#e6a93a"/><circle cx="180" cy="130" r="6" fill="#e6a93a"/><circle cx="175" cy="45" r="4" fill="#5fc2b8"/>
+        </svg>
       </div>
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-      <div class="section-head">
-        <span class="mono">FAQ</span>
-        <h2>Good questions.</h2>
+    <div class="panel" id="p-finfish" role="tabpanel">
+      <div>
+        <span class="badge later">Later · Platform expansion</span>
+        <h3>Finfish feed and new markets</h3>
+        <p>The same fermentation platform scales beyond the hatchery. Through university research partnerships we're working toward omega-3 inputs for salmon and finfish feeds — and longer term, livestock, pet, and food applications where fish oil isn't a fit.</p>
+        <ul>
+          <li>Salmon and marine finfish feed (research partnership)</li>
+          <li>Livestock omega-3 supplementation</li>
+          <li>Plant-based and dairy food ingredients</li>
+        </ul>
       </div>
-
-      <details class="faq-item" open="">
-        <summary>Can I order SureSweet oysters right now?</summary>
-        <p>Not yet. We're starting production, with samples going out to our list this October. Request samples <a href="https://accessflora.com/#profile" style="color:var(--salinity); text-decoration:underline;">here</a>.</p>
-      </details>
-      <details class="faq-item" open="">
-        <summary>Who is SureSweet for?</summary>
-        <p>Chefs, restaurant buyers, and distributors who want a consistent oyster profile they can build a menu around year-round.</p>
-      </details>
-      <details class="faq-item" open="">
-        <summary>Can I really choose an exact salinity and sweetness?</summary>
-        <p>You can tell us your target profile and flavor notes when you join the list. As we bring on early customers, we'll work with you on how closely we can match it for your first orders.</p>
-      </details>
-      <details class="faq-item" open="">
-        <summary>Where do the oysters come from?</summary>
-        <p>We raise oysters in purified, salinity-controlled water on a curated high omega-3 diet.</p>
-      </details>
-      <details class="faq-item" open="">
-        <summary>How do I get in touch about wholesale or partnerships?</summary>
-        <p>Email us at keegan@reeftotable.com — we'd love to hear from you.</p>
-      </details>
+      <div class="panel-art" aria-hidden="true">
+        <svg viewBox="0 0 220 180" width="230">
+          <path d="M30 90 Q80 40 150 70 L195 45 L185 90 L195 135 L150 110 Q80 140 30 90z" fill="#9fc3d6" stroke="#14506b" stroke-width="3"/>
+          <circle cx="62" cy="84" r="5" fill="#10222e"/>
+          <path d="M95 70 q10 20 0 40" fill="none" stroke="#14506b" stroke-width="2"/>
+          <circle cx="40" cy="40" r="6" fill="#e6a93a"/><circle cx="190" cy="160" r="5" fill="#e6a93a"/><circle cx="20" cy="150" r="4" fill="#5fc2b8"/>
+        </svg>
+      </div>
     </div>
-  </section>
 
-</main>
+    <div class="species reveal">
+      <span>Eastern oyster</span><span>Pacific oyster</span><span>Hard clam / quahog</span><span>Bay scallop</span><span>Blue mussel</span><span>Whiteleg shrimp</span><span>Rotifers</span><span><em>Artemia</em></span>
+    </div>
+    <p class="species-note">Working with a species that isn't listed? <a href="#contact">Tell us about your hatchery.</a></p>
+  </div>
+</section>
 
+<!-- ============ COMPARISON ============ -->
+<section class="compare" id="compare">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">What Changes</span>
+      <h2>How it fits into your feed program.</h2>
+      <p class="lead" style="margin-top:16px">We're not asking you to tear out your algae room. Most hatcheries start by running our concentrate alongside existing feeds and scaling from there.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th></th><th>In-house live algae</th><th>Fish-oil enrichments</th><th class="us">AccessFlora concentrate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Omega-3 source</td><td>Varies by species and culture health</td><td>Wild-caught fish</td><td class="us">Fermented microalgae (DHA)</td></tr>
+          <tr><td>Supply risk</td><td>Culture crashes, contamination</td><td>Fishing seasons, El Niño, price swings</td><td class="us">Produced on demand, year-round</td></tr>
+          <tr><td>Daily labor</td><td>High — inoculate, monitor, harvest</td><td>Moderate — emulsify, enrich</td><td class="us">Low — measure and feed</td></tr>
+          <tr><td>Batch consistency</td><td>Variable</td><td>Variable by fish source</td><td class="us">Controlled fermentation conditions</td></tr>
+          <tr><td>Form</td><td>Live cells</td><td>Extracted oil</td><td class="us">Whole cells — nothing extracted</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCIENCE ============ -->
+<section id="science">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">How It's Made</span>
+      <h2>From a single isolate to a gallon of feed.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Isolate</h3><p>Our proprietary strain was isolated from the environment, then characterized and bred in partnership with the University of Connecticut.</p></div>
+      <div class="step reveal"><h3>Ferment</h3><p>Cells grow in the dark in pre-sterilized, single-use bioreactors, fed a simple carbon source and held at a controlled pH.</p></div>
+      <div class="step reveal"><h3>Harvest</h3><p>Whole cells are concentrated — no solvents, no oil extraction — so the DHA stays protected inside the cell membrane.</p></div>
+      <div class="step reveal"><h3>Feed</h3><p>The concentrate ships by the gallon, ready to dose into larval tanks, broodstock systems, or live-feed enrichment.</p></div>
+    </div>
+    <div class="science-note reveal">
+      <div class="q">“</div>
+      <div>
+        <p><strong>Why this microalga?</strong> Many omega-3 sources deliver a mix of fats. Our strain makes DHA its dominant long-chain omega-3, with little else competing for space — the fatty acid larvae need most during early development. And because we feed the whole cell rather than an extracted oil, that DHA reaches your larvae still protected inside the cell membrane.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEYOND FISH OIL ============ -->
+<section id="fish-oil" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The Bigger Picture</span>
+      <h2>A replacement for fish oil, proven one hatchery at a time.</h2>
+      <p class="lead" style="margin-top:16px">Most of the world's omega-3 still comes from small wild fish. As aquaculture grows, that supply can't keep up. Fermented microalgae make DHA at the source — the same place fish get it in the first place.</p>
+    </div>
+    <div class="fishoil-grid">
+      <div class="fcard reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f8a8a" stroke-width="2"><path d="M3 12c4-6 10-6 14 0-4 6-10 6-14 0z"/><path d="M17 12l4-3v6z"/><path d="M3 3l18 18"/></svg></div>
+        <h3>Takes the fish out of the chain</h3>
+        <p>Fish don't make omega-3s — they accumulate them from algae. We skip the middle step and grow the algae directly.</p>
+      </div>
+      <div class="fcard reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f8a8a" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Independent of season and ocean</h3>
+        <p>Fermentation runs year-round, in any climate, close to customers — not tied to a single fishery half a world away.</p>
+      </div>
+      <div class="fcard reveal">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f8a8a" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        <h3>One platform, many markets</h3>
+        <p>Hatcheries are the beachhead. The same organism and process point toward aquafeed, animal nutrition, and food ingredients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="roadmap" id="roadmap">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Where We Are</span>
+      <h2>Scaling from lab to hatchery.</h2>
+      <p class="lead" style="margin-top:16px">We're an early-stage company, and we're upfront about it. Here's what's done and what's next.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl reveal"><div class="dot"></div><small>Done</small><h3>Strain &amp; process</h3><p>Proprietary microalgal strain characterized with UConn; cultivation scaled from 1 L bottles to 1,000 L vessels.</p></div>
+      <div class="tl reveal"><div class="dot"></div><small>Now</small><h3>Hatchery feed trial</h3><p>First commercial-hatchery trial underway, alongside our own oyster conditioning demonstration.</p></div>
+      <div class="tl reveal future"><div class="dot"></div><small>Next</small><h3>Pilot partners</h3><p>Expanding trials with bivalve hatcheries in New England and Atlantic Canada, then shrimp pilots in 2027.</p></div>
+      <div class="tl reveal future"><div class="dot"></div><small>Later</small><h3>Broader aquafeed</h3><p>Finfish feed applications and certified food-grade ingredient lines from the same platform.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="portrait reveal">
+      <div class="fallback">K</div>
+      <img src="images/keegan-oysters.jpg" alt="Keegan Jalbert, founder of AccessFlora, lifting a bag of oysters raised on AccessFlora feed" width="715" height="937" loading="lazy" onerror="this.style.display='none'">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">About AccessFlora</span>
+      <h2>Started in the hatchery. Built in the lab.</h2>
+      <p style="margin-top:18px">I'm Keegan Jalbert. I learned aquaculture hands-on — in Australia, Ecuador, and here in Connecticut — and kept running into the same problem: the farms that feed us depend on a fragile, wild source of omega-3.</p>
+      <p>So I isolated and bred a DHA-producing microalga and built a fermentation process around it with the University of Connecticut. AccessFlora's mission is simple: give hatcheries a reliable, fish-free omega-3 they can plan around — and grow that platform into a real alternative to fish oil.</p>
+      <div class="creds">
+        <div class="cred"><strong>UMaine CCAR</strong><span>Operations at the Center for Cooperative Aquaculture Research</span></div>
+        <div class="cred"><strong>Wolff New Venture Competition</strong><span>Winner, 2026</span></div>
+        <div class="cred"><strong>UConn Nutritional Sciences</strong><span>Research &amp; strain development partner</span></div>
+        <div class="cred"><strong>UConn CCEI</strong><span>Summer Accelerator, 2026</span></div>
+      </div>
+      <div class="suresweet">
+        <img src="images/oyster.png" alt="" width="56" height="41" loading="lazy" style="flex:none;height:auto">
+        <p><strong>Proven in our own oysters.</strong> Our SureSweet line conditions oysters on this feed as a working demonstration of the product. <a href="https://reeftotable.com" target="_blank" rel="noopener">See SureSweet →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Let's talk about your hatchery.</h2>
+      <p class="lead" style="margin-top:16px">The best starting point is a conversation about your species, your current feed program, and what you'd like to improve. We're enrolling a limited number of hatcheries in trials this season.</p>
+      <ul class="contact-list">
+        <li><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f8a8a" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><strong>Email</strong><a href="mailto:keegan@reeftotable.com">keegan@reeftotable.com</a></div></li>
+        <li><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f8a8a" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div><strong>Based in</strong><span>Connecticut &amp; Maine, USA</span></div></li>
+        <li><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1f8a8a" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><div><strong>Languages</strong><span>English · Español</span></div></li>
+      </ul>
+    </div>
+
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID (formspree.io) -->
+    <form class="reveal" id="trialForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="row">
+        <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row">
+        <div><label for="org">Hatchery / company</label><input id="org" name="organization" autocomplete="organization"></div>
+        <div>
+          <label for="role">I'm a…</label>
+          <select id="role" name="role">
+            <option>Hatchery manager / owner</option>
+            <option>Farmer / grower</option>
+            <option>Feed company</option>
+            <option>Researcher</option>
+            <option>Investor / partner</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label>Species of interest</label>
+        <div class="checks">
+          <label><input type="checkbox" name="species" value="Oysters"> Oysters</label>
+          <label><input type="checkbox" name="species" value="Clams"> Clams</label>
+          <label><input type="checkbox" name="species" value="Scallops/Mussels"> Scallops / mussels</label>
+          <label><input type="checkbox" name="species" value="Shrimp"> Shrimp</label>
+          <label><input type="checkbox" name="species" value="Live feed"> Rotifers / Artemia</label>
+          <label><input type="checkbox" name="species" value="Finfish"> Finfish</label>
+        </div>
+      </div>
+      <div><label for="msg">Tell us about your operation</label><textarea id="msg" name="message" placeholder="Current feeds, production scale, what you'd like to improve…"></textarea></div>
+      <button type="submit" class="btn btn-dark" style="justify-self:start">Request a Trial →</button>
+      <p id="form-status" role="status"></p>
+      <p class="form-note">We'll only use your details to follow up about trials and product updates.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="brand">
-        <span class="brand-mark">SureSweet</span>
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:14px">
+          <img src="images/logo-mark-white.png" alt="" width="46" height="36">
+          AccessFlora
+        </a>
+        <p style="max-width:340px">Fermentation-grown microalgal omega-3 for shellfish hatcheries and beyond.</p>
       </div>
-      <div class="footer-links">
-        <a href="https://accessflora.com/#what">The Oyster</a>
-        <a href="https://accessflora.com/#profile">Request a Sample</a>
-        <a href="https://accessflora.com/#about">About</a>
-        <a href="https://accessflora.com/#status">Timeline</a>
-        <a href="https://accessflora.com/#faq">FAQ</a>
-        <a href="mailto:keegan@reeftotable.com">Contact</a>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#applications">Hatchery applications</a></li>
+          <li><a href="#science">How it's made</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Request a trial</a></li>
+          <li><a href="https://reeftotable.com" target="_blank" rel="noopener">SureSweet oysters</a></li>
+          <li><a href="mailto:keegan@reeftotable.com">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <p class="legal">
-      SureSweet is a product of AccessFlora LLC. SureSweet oysters are currently in development and are not yet available for commercial sale.<br>
-      © 2026 AccessFlora LLC. All rights reserved.
-    </p>
+    <div class="foot-bottom">
+      <span>© 2026 AccessFlora LLC. All rights reserved.</span>
+      <span>Products in development and trial; not yet available for general commercial sale.</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  const salinity = document.getElementById('salinity');
-  const sweetness = document.getElementById('sweetness');
-  const size = document.getElementById('size');
-  const salinityReadout = document.getElementById('salinity-readout');
-  const sweetnessReadout = document.getElementById('sweetness-readout');
-  const sizeReadout = document.getElementById('size-readout');
-  const combinedReadout = document.getElementById('combined-readout');
-  const dot = document.getElementById('plot-dot');
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll); onScroll();
 
-  function salinityLabel(v){
-    if(v <= 14) return 'Fresh';
-    if(v <= 19) return 'Light';
-    if(v <= 25) return 'Balanced';
-    if(v <= 30) return 'Briny';
-    return 'Most Salty';
-  }
-  function sweetnessLabel(v){
-    if(v <= 12) return 'Standard';
-    if(v <= 20) return 'Subtly Sweet';
-    if(v <= 27) return 'Sweet';
-    return 'Sweetest';
-  }
-  function sizeLabel(v){
-    if(v <= 2.7) return 'Petite';
-    if(v <= 3.0) return 'Small';
-    if(v <= 3.3) return 'Medium';
-    return 'Large';
-  }
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const links = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    nav.classList.toggle('open-bg', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); nav.classList.remove('open-bg'); burger.setAttribute('aria-expanded', false);
+  }));
 
-  function update(){
-    const sVal = Number(salinity.value);
-    const swVal = Number(sweetness.value);
-    const szVal = Number(size.value);
-
-    salinityReadout.textContent = sVal + ' ppt · ' + salinityLabel(sVal);
-    sweetnessReadout.textContent = swVal + '% Glycogen · ' + sweetnessLabel(swVal);
-    sizeReadout.textContent = szVal.toFixed(1) + '" · ' + sizeLabel(szVal);
-    combinedReadout.textContent = sVal + ' ppt ' + salinityLabel(sVal) + ' · ' + swVal + '% glycogen ' + sweetnessLabel(swVal) + ' · ' + szVal.toFixed(1) + '" ' + sizeLabel(szVal);
-
-    const xPct = ((sVal - 10) / (35 - 10)) * 100;
-    const yPct = ((swVal - 5) / (35 - 5)) * 100;
-    dot.style.left = xPct + '%';
-    dot.style.bottom = yPct + '%';
-  }
-
-  salinity.addEventListener('input', update);
-  sweetness.addEventListener('input', update);
-  size.addEventListener('input', update);
-  update();
-
-  const chips = document.querySelectorAll('.profile-chip');
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      salinity.value = chip.dataset.salinity;
-      sweetness.value = chip.dataset.sweetness;
-      update();
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+  // Application tabs
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', 'false'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(tab.dataset.panel).classList.add('active');
     });
   });
 
-  // Submit the form to Formspree via fetch, so the visitor gets an inline
-  // confirmation instead of being redirected off the page.
-  const form = document.getElementById('signup-form');
+  // Reveal on scroll
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 }) : null;
+  document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+
+  // Form submit (Formspree via fetch, falls back to normal POST)
+  const form = document.getElementById('trialForm');
   const status = document.getElementById('form-status');
-  const submitBtn = form.querySelector('button[type="submit"]');
-
-  form.addEventListener('submit', async function(e){
+  form.addEventListener('submit', async (e) => {
+    if (form.action.includes('YOUR_FORM_ID')) {
+      e.preventDefault();
+      const d = new FormData(form);
+      const species = d.getAll('species').join(', ');
+      const body = `Name: ${d.get('name')}\nOrganization: ${d.get('organization')}\nRole: ${d.get('role')}\nSpecies: ${species}\n\n${d.get('message')}`;
+      window.location.href = `mailto:keegan@reeftotable.com?subject=${encodeURIComponent('Hatchery trial inquiry')}&body=${encodeURIComponent(body)}`;
+      return;
+    }
     e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting…';
-    status.className = 'form-status';
-    status.textContent = '';
-
     try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        status.textContent = "You're on the list! We'll reach out to this email when samples are ready.";
-        status.className = 'form-status show ok';
-        form.reset();
-        salinity.value = 22;
-        sweetness.value = 23;
-        size.value = 3;
-        chips.forEach(c => c.classList.remove('active'));
-        update();
-      } else {
-        const result = await response.json().catch(() => null);
-        status.textContent = (result && result.errors && result.errors.length)
-          ? result.errors.map(err => err.message).join(', ')
-          : 'Something went wrong submitting the form. Please try again, or email keegan@reeftotable.com directly.';
-        status.className = 'form-status show warn';
-      }
-    } catch (err) {
-      status.textContent = 'Something went wrong submitting the form. Please check your connection and try again.';
-      status.className = 'form-status show warn';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Join the List';
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      status.style.display = 'block';
+      status.textContent = res.ok ? 'Thanks — we\'ll be in touch soon.' : 'Something went wrong. Please email keegan@reeftotable.com.';
+      if (res.ok) form.reset();
+    } catch {
+      status.style.display = 'block';
+      status.textContent = 'Something went wrong. Please email keegan@reeftotable.com.';
     }
   });
-
-  // Gentle reveal on scroll
-  const revealables = document.querySelectorAll('section > .wrap');
-  if('IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-          io.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.1});
-    revealables.forEach(el=>{
-      el.style.opacity = 0;
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      io.observe(el);
-    });
-  }
 </script>
-
-
-
-</body></html>
+</body>
+</html>
